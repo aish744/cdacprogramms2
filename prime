@@ -1,0 +1,26 @@
+#!/bin/bash
+
+is_prime() {
+  local n=$1
+  local count=0
+
+  if ((n <= 1)); then
+    echo "$n is not a prime number"
+    return
+  fi
+
+  for ((i=1; i<=n; i++)); do
+    if ((n % i == 0)); then
+      count=$((count + 1))
+    fi
+  done
+
+  if ((count == 2)); then
+    echo "$n is a prime number"
+  else
+    echo "$n is not a prime number"
+  fi
+}
+
+read -p "Enter a number: " number
+is_prime "$number"

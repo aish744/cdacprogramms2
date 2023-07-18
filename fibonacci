@@ -1,0 +1,19 @@
+#!/bin/bash
+
+fibonacci() {
+  local t1=0
+  local t2=1
+
+  echo "$t1 $t2"
+
+  for ((i=2; i<=$1; i++))
+  do
+    local t3=$((t1 + t2))
+    echo "$t3"
+    t1=$t2
+    t2=$t3
+  done
+}
+
+read -p "Enter the value of n: " number
+fibonacci "$number"

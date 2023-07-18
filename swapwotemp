@@ -1,0 +1,18 @@
+#!/bin/bash
+
+swap() {
+  local -n a=$1
+  local -n b=$2
+
+  a=$((a + b))
+  b=$((a - b))
+  a=$((a - b))
+}
+
+# Example usage
+num1=10
+num2=20
+
+echo "Before swap: num1=$num1, num2=$num2"
+swap num1 num2
+echo "After swap: num1=$num1, num2=$num2"
