@@ -1,0 +1,15 @@
+#!/bin/bash
+
+oddEven() {
+  local n=$1
+  local r=$((n % 2))
+
+  if ((r == 0)); then
+    echo "Even number"
+  else
+    echo "Odd number"
+  fi
+}
+
+read -p "Enter a number: " n
+oddEven "$n"

@@ -1,0 +1,18 @@
+#!/bin/bash
+
+swap() {
+  local temp=$1
+  local t1=$2
+  local t2=$3
+
+  echo "Before swap: t1=$t1, t2=$t2"
+
+  t1=$t2
+  t2=$temp
+
+  echo "After swap: t1=$t1, t2=$t2"
+}
+
+read -p "Enter the value of t1: " t1
+read -p "Enter the value of t2: " t2
+swap "$t1" "$t1" "$t2"

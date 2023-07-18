@@ -1,0 +1,26 @@
+#!/bin/bash
+
+armstrong()
+{
+local num=$1
+local sum=0
+local temp=$num
+local digit
+local num_digits=${#num}
+
+while ((temp > 0)); do
+  digit=$((temp % 10))
+  sum=$((sum + digit ** num_digit))
+  temp=$((temp / 10))
+done
+
+if ((sum == num)); then
+  echo "$num is an armstrong number"
+else
+  echo "$num is not armstrong"
+fi
+}
+
+read -p "enter a number: " num
+
+armstrong "$num"
